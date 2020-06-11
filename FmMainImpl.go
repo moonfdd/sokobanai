@@ -29,7 +29,7 @@ type TFmMainFields struct {
 	MaxGe                  int
 
 	//起点只有：墙，箱子，静止空间，运动空间
-	StartDataModel       *DataModel
+	StartDataModel *DataModel
 	//终点只有：墙，箱子，静止空间，运动空间
 	EndMap_Md5_DataModel map[string]*DataModel
 
@@ -84,7 +84,7 @@ func (f *TFmMain) OnFormCreate(sender vcl.IObject) {
 
 			f.Panel1.SetCaption("")
 			f.PMap.SetCaption("")
-			f.Version = "1.0.0.0"
+			f.Version = "1.0.1"
 			f.SetCaption(f.Caption() + f.Version)
 
 			//f.ImageSelect.SetPicture(jpg)
@@ -1112,7 +1112,8 @@ func (f *TFmMain) OnBtnTwoWayAIClick(sender vcl.IObject) {
 
 		//if 194*endlen > 309*startlen {
 		//if 1*endlen > 1*startlen {
-		if 194*endlen > 309*startlen {
+		if endlen > startlen<<1 {
+			//if 194*endlen > 309*startlen {
 			now := time.Now()
 			ret = f.PushOneStep()
 			d0 += time.Now().Sub(now)
