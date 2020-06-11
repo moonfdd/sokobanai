@@ -1,0 +1,141 @@
+object FmMain: TFmMain
+  Left = 752
+  Height = 720
+  Top = 148
+  Width = 960
+  Caption = '福哥之推箱子AI '
+  ClientHeight = 720
+  ClientWidth = 960
+  OnCreate = FormCreate
+  LCLVersion = '2.0.8.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 720
+    Top = 0
+    Width = 184
+    Align = alLeft
+    Caption = '  '
+    ClientHeight = 720
+    ClientWidth = 184
+    ParentColor = False
+    TabOrder = 0
+    object BtnSpace: TButton
+      Left = 48
+      Height = 25
+      Top = 56
+      Width = 75
+      Caption = '空间'
+      OnClick = BtnSpaceClick
+      TabOrder = 0
+    end
+    object BtnTarget: TButton
+      Left = 48
+      Height = 25
+      Top = 152
+      Width = 75
+      Caption = '目标'
+      OnClick = BtnTargetClick
+      TabOrder = 1
+    end
+    object ImageSelect: TImage
+      Left = 64
+      Height = 40
+      Top = 192
+      Width = 40
+    end
+    object BtnGoAI: TButton
+      Left = 48
+      Height = 25
+      Top = 288
+      Width = 75
+      Caption = '正向计算'
+      OnClick = BtnGoAIClick
+      TabOrder = 2
+    end
+    object TxtMsg: TStaticText
+      Left = 48
+      Height = 17
+      Top = 440
+      Width = 65
+      Caption = '0/0'
+      TabOrder = 3
+    end
+    object BtnPrevious: TButton
+      Left = 48
+      Height = 25
+      Top = 464
+      Width = 75
+      Caption = '上一步'
+      Enabled = False
+      OnClick = BtnPreviousClick
+      TabOrder = 4
+    end
+  end
+  object PMap: TPanel
+    Left = 184
+    Height = 720
+    Top = 0
+    Width = 776
+    Align = alClient
+    Caption = 'PMap'
+    Color = clBlack
+    ParentColor = False
+    TabOrder = 1
+    OnClick = PMapClick
+  end
+  object BtnPerson: TButton
+    Left = 48
+    Height = 25
+    Top = 88
+    Width = 75
+    Caption = '人'
+    OnClick = BtnPersonClick
+    TabOrder = 2
+  end
+  object BtnBox: TButton
+    Left = 48
+    Height = 25
+    Top = 120
+    Width = 75
+    Caption = '箱子'
+    OnClick = BtnBoxClick
+    TabOrder = 3
+  end
+  object BtnBackAI: TButton
+    Left = 48
+    Height = 25
+    Top = 320
+    Width = 75
+    Caption = '逆向计算'
+    OnClick = BtnBackAIClick
+    TabOrder = 4
+  end
+  object BtnTwoWayAI: TButton
+    Left = 48
+    Height = 25
+    Top = 352
+    Width = 75
+    Caption = '双向计算'
+    OnClick = BtnTwoWayAIClick
+    TabOrder = 5
+  end
+  object BtnNext: TButton
+    Left = 48
+    Height = 25
+    Top = 496
+    Width = 75
+    Caption = '下一步'
+    Enabled = False
+    OnClick = BtnNextClick
+    TabOrder = 6
+  end
+  object BtnClear: TButton
+    Left = 48
+    Height = 25
+    Top = 600
+    Width = 75
+    Caption = '清空'
+    OnClick = BtnClearClick
+    TabOrder = 7
+  end
+end
