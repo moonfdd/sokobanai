@@ -5,9 +5,12 @@ import (
 	"fmt"
 )
 
+//保存每一步的数据
 type DataModel struct {
+	//二维数组
 	Data [][]ImageTag
-	MD5  string
+	//方便查找
+	MD5 string
 }
 
 //将符合条件的静止空间变成运动空间
@@ -42,6 +45,7 @@ func (d *DataModel) SpaceToSpaceActive() {
 	}
 }
 
+//将运动空间变成静止空间
 func (d *DataModel) SpaceActiveToSpace() {
 	MaxHang := len(d.Data)
 	MaxGe := len(d.Data[0])

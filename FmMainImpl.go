@@ -28,7 +28,9 @@ type TFmMainFields struct {
 	MaxHang                int
 	MaxGe                  int
 
+	//起点只有：墙，箱子，静止空间，运动空间
 	StartDataModel       *DataModel
+	//终点只有：墙，箱子，静止空间，运动空间
 	EndMap_Md5_DataModel map[string]*DataModel
 
 	//StartChacheMap_Md5_DataModel map[string]*DataModel //缓存
@@ -607,6 +609,8 @@ func (f *TFmMain) GenSteps(nodeprevious *Node_Previous, nodenext *Node_Next) {
 	}
 	//fmt.Println("总数量：", len(f.StartChacheMap_Md5_Node_Previous)+len(f.EndChacheMap_Md5_Node_Next))
 }
+
+//更新按钮界面
 func (f *TFmMain) UpdateBtn() {
 	if f.StepIndex == 0 {
 		f.BtnPrevious.SetEnabled(false)
@@ -620,6 +624,8 @@ func (f *TFmMain) UpdateBtn() {
 	}
 	f.TxtMsg.SetCaption(strconv.Itoa(f.StepIndex) + "/" + strconv.Itoa(len(f.Steps)-1))
 }
+
+//更新界面
 func (f *TFmMain) UpdateStepUI() {
 	var enddatamodel *DataModel = nil
 	for _, v := range f.EndMap_Md5_DataModel {
@@ -1145,6 +1151,7 @@ func (f *TFmMain) OnBtnTwoWayAIClick(sender vcl.IObject) {
 	f.UpdateBtn()
 }
 
+//清空
 func (f *TFmMain) OnBtnClearClick(sender vcl.IObject) {
 	for i := 0; i < MAXCOUNT; i++ {
 		for j := 0; j < MAXCOUNT; j++ {
