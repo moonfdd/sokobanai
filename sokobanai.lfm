@@ -3,7 +3,7 @@ object FmMain: TFmMain
   Height = 720
   Top = 148
   Width = 960
-  Caption = '福哥之推箱子AI '
+  Caption = '福大大之推箱子AI '
   ClientHeight = 720
   ClientWidth = 960
   OnCreate = FormCreate
